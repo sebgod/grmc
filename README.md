@@ -3,4 +3,4 @@ A cross-platform CLI to compile GOLD parser grammars
 
 # building
 
-  $ make
+  - run GNU ```make```
