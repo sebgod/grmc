@@ -1,6 +1,6 @@
 # grmc
 A cross-platform CLI to compile GOLD parser grammars
 
-# building
+## building
 
   - run GNU ```make```
