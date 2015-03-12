@@ -2,6 +2,7 @@ VERSION:=5.2.0
 FOLDER_NAME:=GOLD-Builder-$(VERSION)-Cmd
 
 ROOT:=$(shell pwd)
+MONO:=mono
 FOLDER:=$(ROOT)/$(FOLDER_NAME)
 ZIP_FILE_NAME:=$(FOLDER_NAME).zip
 ZIP_FILE=$(ROOT)/$(ZIP_FILE_NAME)
@@ -12,8 +13,7 @@ WGET:=wget
 ifeq ($(OS),Windows_NT)
     BUILD:=$(FOLDER)/GOLDbuild.exe
 else
-    CSHARP_COMPILER:=$(shell mmc --output-csharp-compiler-type)
-    BUILD:=$(CSHARP_COMPILER) $(FOLDER)/GOLDbuild
+    BUILD:=$(MONO) $(FOLDER)/GOLDbuild
 endif
 
 .PHONY: default
