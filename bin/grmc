@@ -6,7 +6,11 @@ die () {
 }
 
 ROOT=${0%/*}
-ROOT=`cd "${ROOT}/../lib-exec" && pwd -P`
+if [ "${ROOT}" == "${0}" ]; then
+    ROOT=`pwd -P`
+else
+    ROOT=`cd "${ROOT}/../lib-exec" && pwd -P`
+fi
 
 [ $# -ge 1 ] || die "Please specify a grammar file to be compiled or an egt file to be recompiled"
 
